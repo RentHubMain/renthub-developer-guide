@@ -52,6 +52,16 @@ Skills 支持：
 - 触发频率高、步骤固定的流程（如部署、PR 流程）优先封装
 - 不要把所有规范都塞进 Skill——结构性约束放 Rules，流程性操作放 Skills
 
+### 2.3 项目示例：renthub-commit
+
+本仓库已内置 [`renthub-commit`](../../.cursor/skills/renthub-commit/SKILL.md) skill，封装了 RentHub 的 Conventional Commits 规范：
+
+- 自动读取 `git diff` 分析改动
+- 按规范起草 `type(scope): subject` + body
+- 展示给用户确认后执行 `git commit`
+
+触发方式：在 Composer 中说"帮我 commit"或输入 `/renthub-commit`。
+
 > Skills 目前在 Nightly 渠道可用，正式版尚未全面开放，可关注更新。
 
 ---
