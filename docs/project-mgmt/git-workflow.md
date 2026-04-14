@@ -83,12 +83,31 @@ feat(order): 支持订单分页查询
 
 > **body 写"为什么"，不写"做了什么"**。"做了什么"代码本身就能说明，但"为什么这样做"只有你知道，三个月后的队友看到 body 才能真正理解这次改动的背景。
 
-### 2.2 AI 时代的 Commit 纪律
+### 2.2 让 AI 帮你写 commit message（推荐）
+
+写好一条 commit message 需要思考，但 AI 可以承担大部分起草工作。
+
+**推荐流程：**
+
+1. 完成一个阶段的改动后，在 Cursor Composer 中 `@` 本文件（`git-workflow.md`）
+2. 说："根据文件里的 commit 规范，分析当前 git 改动，帮我生成 commit message，并直接执行提交"
+3. AI 会读取 `git diff`、理解改动内容、对照规范起草 message，并在你确认后执行 `git commit`
+
+整个过程不需要手动打一行命令。
+
+**注意事项：**
+
+- AI 起草的 message 仍需人工**确认**再执行，不要无脑放行——尤其是 body 部分，AI 描述的是"做了什么"，你需要补充"为什么"
+- 若改动涉及多个目的，告诉 AI"拆成 N 个 commit"，它会分批暂存和提交
+
+---
+
+### 2.3 Commit 纪律
 
 AI 能快速生成大量代码，但这不是"一个 commit 提交所有改动"的理由。
 
 - **每个 commit 只做一件事**：AI 改了 5 个文件，但如果涉及 3 个不同目的，就应该拆成 3 个 commit
-- **不要直接用 AI 生成的 commit message**：AI 倾向于描述"做了什么"，而好的 commit message 应该解释"为什么"。审查后再提交
+- **审查 AI 起草的 message**：AI 倾向于描述"做了什么"，好的 message 应该解释"为什么"，提交前确认
 - **WIP commit 不进 PR**：WIP（Work In Progress，进行中）是开发过程中随手保存进度的临时 commit，message 通常是 `wip`、`tmp`、`test` 等无意义内容。开 PR 前用 `git rebase -i` 把这些临时 commit 合并或重写成有意义的提交，不要把"草稿"带入正式记录
 - **不提交生成物**：AI 生成的调试代码、临时日志、注释掉的旧代码，清理后再提交
 
