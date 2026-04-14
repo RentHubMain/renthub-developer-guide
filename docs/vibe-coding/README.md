@@ -9,6 +9,7 @@
 | 文件 | 内容 |
 |------|------|
 | [cursor-guide.md](./cursor-guide.md) | Cursor 使用指南：账号、模型选择、限额配置与 token 控制 |
+| [cursor-concepts.md](./cursor-concepts.md) | Rules / Skills / Commands / Subagents / MCP 定义与 Best Practice |
 
 ## 核心原则
 
