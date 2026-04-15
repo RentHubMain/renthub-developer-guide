@@ -202,3 +202,56 @@ table {
 .menu__link--sublist {
   font-weight: 600;
 }
+
+/* ══════════════════════════════════════════
+   移动端：禁用侧栏，保持 navbar 链接始终可见
+   ══════════════════════════════════════════ */
+
+/* 隐藏汉堡按钮和整个侧栏 */
+.navbar__toggle,
+.navbar-sidebar,
+.navbar-sidebar__backdrop {
+  display: none !important;
+}
+
+/* 移动端：隐藏右侧导航链接，只保留暗黑切换和搜索 */
+@media (max-width: 996px) {
+  .navbar__items {
+    display: flex !important;
+  }
+
+  /* 隐藏右侧所有普通链接（官网、GitHub 等） */
+  .navbar__items--right .navbar__item.navbar__link {
+    display: none !important;
+  }
+
+  /* 同步隐藏左侧「文档」链接 */
+  .navbar__items--left .navbar__item.navbar__link {
+    display: none !important;
+  }
+
+  [class*='colorModeToggle_'] {
+    display: flex !important;
+  }
+
+  [class*='navbarSearchContainer'] {
+    position: static !important;
+  }
+
+  .navbar__items--right {
+    gap: 0.3rem !important;
+  }
+
+  .navbar__items--right [class*='colorModeToggle'] button {
+    padding: 0.2rem 0.4rem !important;
+  }
+
+  .navbar__brand {
+    font-size: 0.85rem !important;
+  }
+
+  .navbar__logo img {
+    height: 24px !important;
+    width: 24px !important;
+  }
+}
