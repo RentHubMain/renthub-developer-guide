@@ -3,6 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var key = 'renthub-theme';
+      var stored = null;
+      try { stored = localStorage.getItem(key); } catch (e) {}
+      var t = (stored === 'dark' || stored === 'light')
+        ? stored
+        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +26,6 @@
   <main>
     {{ content }}
   </main>
-  {% include footer.html %}
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

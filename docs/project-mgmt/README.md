@@ -11,8 +11,8 @@ permalink: /docs/project-mgmt/
 
 | 文件 | 内容 |
 |------|------|
-| [Git 基础入门]({{ '/docs/project-mgmt/git-basics.html' | relative_url }}) | 零基础理解版本控制、分支、提交与远程操作 |
-| [Git 协作工作流]({{ '/docs/project-mgmt/git-workflow.html' | relative_url }}) | 现代 IDE + AI 环境下的分支、提交与 Review 最佳实践 |
+| [Git 基础入门]({{ '/docs/project-mgmt/git-basics/' | relative_url }}) | 零基础理解版本控制、分支、提交与远程操作 |
+| [Git 协作工作流]({{ '/docs/project-mgmt/git-workflow/' | relative_url }}) | 现代 IDE + AI 环境下的分支、提交与 Review 最佳实践 |
 
 ## 核心原则
 

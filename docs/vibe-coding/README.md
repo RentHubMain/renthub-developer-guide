@@ -11,8 +11,8 @@ permalink: /docs/vibe-coding/
 
 | 文件 | 内容 |
 |------|------|
-| [Cursor 使用指南]({{ '/docs/vibe-coding/cursor-guide.html' | relative_url }}) | 账号、模型选择、限额配置与 token 控制 |
-| [Cursor 核心概念]({{ '/docs/vibe-coding/cursor-concepts.html' | relative_url }}) | Rules / Skills / Commands / Subagents / MCP 定义与 Best Practice |
+| [Cursor 使用指南]({{ '/docs/vibe-coding/cursor-guide/' | relative_url }}) | 账号、模型选择、限额配置与 token 控制 |
+| [Cursor 核心概念]({{ '/docs/vibe-coding/cursor-concepts/' | relative_url }}) | Rules / Skills / Commands / Subagents / MCP 定义与 Best Practice |
 
 ## 核心原则
 
