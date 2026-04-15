@@ -8,6 +8,14 @@ import type {Props} from '@theme/DocRoot/Layout/Sidebar';
 
 import styles from './styles.module.css';
 
+const SIDEBAR_LABELS: Record<string, string> = {
+  quickStartSidebar: '快速开始',
+  vibeCodingSidebar: 'Vibe Coding',
+  projectMgmtSidebar: '项目管理',
+  uiDesignSidebar: '界面设计',
+  devKnowledgeSidebar: '开发知识',
+};
+
 function ResetOnSidebarChange({children}: {children: ReactNode}) {
   const sidebar = useDocsSidebar();
   return (
@@ -15,6 +23,12 @@ function ResetOnSidebarChange({children}: {children: ReactNode}) {
       {children}
     </React.Fragment>
   );
+}
+
+function SidebarSectionTitle(): ReactNode {
+  const sidebar = useDocsSidebar();
+  const label = SIDEBAR_LABELS[sidebar?.name ?? ''] ?? '';
+  return <h2 className={styles.sidebarSectionTitle}>{label}</h2>;
 }
 
 export default function DocRootLayoutSidebar({
@@ -30,12 +44,15 @@ export default function DocRootLayoutSidebar({
       )}>
       <ResetOnSidebarChange>
         <div className={styles.sidebarViewport}>
-          <DocSidebar
-            sidebar={sidebar}
-            path={pathname}
-            onCollapse={() => {}}
-            isHidden={false}
-          />
+          <div className={styles.sidebarInner}>
+            <SidebarSectionTitle />
+            <DocSidebar
+              sidebar={sidebar}
+              path={pathname}
+              onCollapse={() => {}}
+              isHidden={false}
+            />
+          </div>
         </div>
       </ResetOnSidebarChange>
     </aside>

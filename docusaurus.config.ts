@@ -68,9 +68,33 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'docsSidebar',
+          sidebarId: 'quickStartSidebar',
           position: 'left',
-          label: '文档',
+          label: '快速开始',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'vibeCodingSidebar',
+          position: 'left',
+          label: 'Vibe Coding',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'projectMgmtSidebar',
+          position: 'left',
+          label: '项目管理',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'uiDesignSidebar',
+          position: 'left',
+          label: '界面设计',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'devKnowledgeSidebar',
+          position: 'left',
+          label: '开发知识',
         },
         {
           href: 'https://www.renthub.cloud/',

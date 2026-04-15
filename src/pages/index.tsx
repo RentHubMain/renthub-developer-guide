@@ -116,8 +116,8 @@ const HomepageHero: FC = () => {
             </a>
           </p>
           <div className={styles.heroActions}>
-            <Link className={styles.btnPrimary} to="/docs/vibe-coding/">
-              进入指南
+            <Link className={styles.btnSecondary} to="/docs/quick-start">
+              快速开始
             </Link>
           </div>
         </div>

@@ -1,7 +1,17 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  docsSidebar: [
+  quickStartSidebar: [
+    {
+      type: 'category',
+      label: '快速开始',
+      link: { type: 'doc', id: 'quick-start/index' },
+      items: [
+        'quick-start/onboarding',
+      ],
+    },
+  ],
+  vibeCodingSidebar: [
     {
       type: 'category',
       label: 'Vibe Coding',
@@ -11,6 +21,8 @@ const sidebars: SidebarsConfig = {
         'vibe-coding/cursor-concepts',
       ],
     },
+  ],
+  projectMgmtSidebar: [
     {
       type: 'category',
       label: '项目管理',
@@ -22,6 +34,8 @@ const sidebars: SidebarsConfig = {
         'project-mgmt/renthub-dev-workflow',
       ],
     },
+  ],
+  uiDesignSidebar: [
     {
       type: 'category',
       label: '界面设计',
@@ -32,6 +46,8 @@ const sidebars: SidebarsConfig = {
         'ui-design/admin-panel',
       ],
     },
+  ],
+  devKnowledgeSidebar: [
     {
       type: 'category',
       label: '开发知识',

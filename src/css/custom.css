@@ -51,6 +51,19 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
+/* 左、右侧导航项统一为 flex + gap，间距与「官网 | GitHub」一致。
+   Docusaurus 3 左侧容器类名为 .theme-layout-navbar-left（见 ThemeClassNames），
+   并非 Infima 的 .navbar__items--left。 */
+.theme-layout-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-layout-navbar-left .navbar__item.navbar__link {
+  margin: 0;
+}
+
 /* 右侧所有元素统一间距 */
 .navbar__items--right {
   display: flex;
@@ -83,9 +96,9 @@
   text-decoration: none;
 }
 
-/* 左侧「文档」链接也胶囊化 */
-.navbar__items--left .navbar__item.navbar__link {
-  border: 1.5px solid var(--ifm-color-emphasis-300);
+/* 左侧「文档」链接也胶囊化（边框粗细与右侧一致） */
+.theme-layout-navbar-left .navbar__item.navbar__link {
+  border: 2px solid var(--ifm-color-emphasis-300);
   border-radius: 9999px;
   padding: 0.3rem 0.9rem !important;
   font-size: 0.875rem;
@@ -93,8 +106,8 @@
   transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
-.navbar__items--left .navbar__item.navbar__link:hover,
-.navbar__items--left .navbar__item.navbar__link--active {
+.theme-layout-navbar-left .navbar__item.navbar__link:hover,
+.theme-layout-navbar-left .navbar__item.navbar__link--active {
   border-color: var(--ifm-color-primary);
   color: var(--ifm-color-primary);
   background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
@@ -115,7 +128,7 @@
 }
 
 [data-theme='dark'] .navbar__items--right .navbar__item:hover,
-[data-theme='dark'] .navbar__items--left .navbar__item.navbar__link:hover {
+[data-theme='dark'] .theme-layout-navbar-left .navbar__item.navbar__link:hover {
   border-color: var(--ifm-color-primary);
   background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
 }
@@ -226,7 +239,7 @@ table {
   }
 
   /* 同步隐藏左侧「文档」链接 */
-  .navbar__items--left .navbar__item.navbar__link {
+  .theme-layout-navbar-left .navbar__item.navbar__link {
     display: none !important;
   }
 
