@@ -1,0 +1,8 @@
+{
+  "label": "开发知识",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "dev-knowledge/index"
+  }
+}

@@ -52,6 +52,12 @@ const categories = [
     desc: '拟物化设计系统、60-30-10 色彩规则、组件规范。覆盖小程序、官网与管理后台三端。',
     to: '/docs/ui-design/',
   },
+  {
+    tag: '开发知识',
+    title: '云开发技术栈',
+    desc: '腾讯云 CloudBase 核心能力入门：文档型数据库、云函数、云托管、云存储与身份验证。',
+    to: '/docs/dev-knowledge/',
+  },
 ];
 
 const HomepageHero: FC = () => {

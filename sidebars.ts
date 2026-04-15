@@ -30,6 +30,14 @@ const sidebars: SidebarsConfig = {
         'ui-design/admin-panel',
       ],
     },
+    {
+      type: 'category',
+      label: '开发知识',
+      link: { type: 'doc', id: 'dev-knowledge/index' },
+      items: [
+        'dev-knowledge/cloudbase',
+      ],
+    },
   ],
 };
 
