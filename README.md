@@ -2,13 +2,37 @@
 
 ![RentHub Banner](./assets/images/renthub-banner.png)
 
-本仓库是 **RentHub（租汇）** 面向开发者的 **文档站**：以 Markdown 为主，帮助团队快速了解项目、上手开发与统一协作方式。**不包含可运行的业务代码**；具体说明与专题正文放在 `docs/` 下（随撰写进度补充）。
+本仓库 **`renthub-developer-guide`** 是 **RentHub（租汇）** 面向团队的 **文档站源码**：使用 [Docusaurus 3](https://docusaurus.io/) 将 `docs/` 下的 Markdown 构建为静态站点。**不包含小程序、云函数、管理后台等业务代码**；正文与专题在 `docs/` 中持续补充。
 
-## RentHub 简介
+**线上站点**：[docs.renthub.cloud](https://docs.renthub.cloud)（由本仓库构建部署，自定义域名见 `static/CNAME`）。
 
-RentHub 是基于微信小程序的租赁市场平台，连接出租方与承租方，支持租赁信息发布、浏览、预订与订单管理等；并配有 Web 管理后台，供审核与运营使用。主工程采用 Monorepo，涵盖小程序、云函数、管理端与官网等。
+## RentHub 产品与文档的关系
+
+RentHub 是基于微信小程序的租赁市场平台（信息发布、浏览、预订、订单等），并配有 Web 管理后台。产品线在工程上通常采用 **Monorepo**，常见目录约定包括：
+
+- 小程序前端（WXML + WXSS + JS）
+- 云函数（user / asset / order 等域）
+- React + TypeScript 管理后台
+- 官方网站
+
+上述 **业务代码所在仓库与本文档仓库相互独立**；本仓库只维护开发者可见的说明、规范与上手路径。
 
 官网：[renthub.cloud](https://www.renthub.cloud/)
+
+## 本仓库结构（文档站）
+
+| 路径 | 说明 |
+|------|------|
+| `docs/` | 文档正文；每板块一个子目录，`index.md` 为入口 |
+| `sidebars.ts` | 文档侧栏结构 |
+| `docusaurus.config.ts` | 站点、`baseUrl`、`staticDirectories`、导航栏等 |
+| `src/pages/` | 站点首页（React）及样式模块 |
+| `src/css/custom.css` | 全站 Infima 变量与品牌色 |
+| `src/theme/DocRoot/Layout/` | 通过 `docusaurus swizzle` 定制的文档页布局（侧栏、主内容区等） |
+| `static/` | 构建时复制到站点根目录（如 `.nojekyll`、`CNAME`） |
+| `assets/` | 图片等静态资源（在配置中作为 `staticDirectories` 之一挂载） |
+
+编写与导航约定见：[`.cursor/rules/project-guide.mdc`](./.cursor/rules/project-guide.mdc)。
 
 ## 文档目录
 
@@ -46,20 +70,22 @@ RentHub 是基于微信小程序的租赁市场平台，连接出租方与承租
 
 ## 本地开发
 
+`docusaurus.config.ts` 中 **`baseUrl` 为 `/`**，本地默认地址为站点根路径（无子路径前缀）。
+
 ```bash
 npm install          # 首次安装，或依赖变更后
-npm start            # 开发服务器，默认 http://localhost:3000/renthub-developer-guide/
+npm start            # 开发服务器，默认 http://localhost:3000/
 npm run build        # 生产构建，产物在 build/
 npm run serve        # 本地预览构建产物
 ```
 
-## GitHub Pages 部署
+## 部署
 
-本仓库使用 [Docusaurus 3](https://docusaurus.io/) 生成静态站点，并通过 [GitHub Actions 工作流](./.github/workflows/deploy-pages.yml) 自动部署到 GitHub Pages。
+本仓库通过 [GitHub Actions](./.github/workflows/deploy-pages.yml) 在推送至 **`main`** 或 **`master`** 时构建 `build/` 并发布到 **GitHub Pages**。
 
 1. 在 GitHub 打开本仓库的 **Settings → Pages**。
-2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**（不要选 "Deploy from a branch"）。
-3. 向 **`main`** 或 **`master`** 分支推送后，工作流会自动构建并发布；部署完成后，同一页面会显示访问地址，一般为 `https://<用户名或组织名>.github.io/<仓库名>/`。
+2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**（不要选 “Deploy from a branch”）。
+3. 若使用 GitHub 默认域名，访问形式一般为 `https://<用户或组织>.github.io/<仓库名>/`。本仓库同时通过 `static/CNAME` 配置 **自定义域名** `docs.renthub.cloud`；DNS 与证书需在域名/GitHub 侧按官方文档配置。
 
 ---
 

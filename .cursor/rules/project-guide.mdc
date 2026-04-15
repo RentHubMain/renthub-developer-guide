@@ -7,59 +7,71 @@ alwaysApply: true
 
 ## 项目性质
 
-本仓库是 **文档项目**，使用 **Docusaurus 3** 构建静态站点并部署到 GitHub Pages。
-目标是为 RentHub 团队提供一站式、快速上手的开发者参考手册。
+本仓库 **`renthub-developer-guide`** 是 **文档项目**：使用 **Docusaurus 3** 构建静态站点，为 RentHub 团队提供一站式开发者参考手册。
 
-RentHub 是基于微信小程序的租赁市场平台，采用 Monorepo 架构：
-- `miniprogram/` — 微信小程序前端（WXML + WXSS + JS）
-- `cloudfunctions/` — 云函数（user / asset / order / help / message / admin）
-- `admin/` — React 18 + TypeScript Web 管理后台
-- `website/` — 官方网站
+- **本仓库仅包含文档站源码**（配置、`docs/`、`src/pages/`、`src/theme/` 等），**不包含**小程序、云函数、管理后台、官网等业务实现代码。
+- **RentHub 产品线**（基于微信小程序的租赁市场平台，含 Web 管理后台）在工程上通常采用 **Monorepo**；常见模块划分用于文档叙述与读者上下文理解，例如：
+  - 小程序前端（WXML + WXSS + JS）
+  - 云函数（user / asset / order / help / message / admin 等）
+  - React + TypeScript Web 管理后台
+  - 官方网站  
+
+  上述目录**不**在本仓库中出现；若文档需要指向业务仓库，使用对外链接或团队内约定路径，勿写成本仓库内的相对目录。
+
+**站点**：生产环境 `url` 为 `https://docs.renthub.cloud`，`baseUrl` 为 `/`（见 `docusaurus.config.ts`）。自定义域名由 `static/CNAME` 声明。
 
 ---
 
 ## 技术栈
 
-- **静态站点生成器**：Docusaurus 3（React + MDX）
-- **语言**：TypeScript（config 文件）+ Markdown（文档内容）
-- **部署**：GitHub Actions → GitHub Pages
+- **静态站点生成器**：Docusaurus 3（React + MDX），`preset-classic`，**未启用 blog**
+- **语言**：TypeScript（配置与主题组件）+ Markdown（文档正文）
+- **国际化**：`i18n.defaultLocale` 为 `zh-Hans`（当前仅该 locale）
+- **部署**：GitHub Actions → GitHub Pages（见 `.github/workflows/deploy-pages.yml`）
 - **主题**：Docusaurus classic + Infima CSS（主题色 `#3d7c47` / `#7cb342`）
-- **依赖管理**：npm（`package.json`）
+- **依赖管理**：npm（`package.json`）；`overrides` 将 `webpack` 固定为 `5.95.0`（与 `webpackbar@6` / Node 高版本兼容性相关，见文末说明）
 
 ---
 
 ## 目录结构规范
 
 ```
-docusaurus.config.ts     # Docusaurus 配置（站点信息、navbar、footer、i18n）
-sidebars.ts              # 侧边栏结构配置
-package.json             # Node.js 依赖
+docusaurus.config.ts     # 站点 url/baseUrl、navbar、footer、i18n、staticDirectories
+sidebars.ts              # 文档侧栏（docsSidebar）
+package.json             # 依赖与 scripts
 tsconfig.json            # TypeScript 配置
 babel.config.js          # Babel 配置
 
 src/
   css/custom.css         # 全站样式（Infima 变量覆盖，品牌色）
-  pages/index.tsx        # 站点首页（React 组件）
+  pages/index.tsx        # 站点首页（Hero、新手路线、板块卡片等）
   pages/index.module.css # 首页样式模块
+  theme/DocRoot/Layout/  # swizzle 的文档页根布局（侧栏宽度、展开按钮、主内容区等）
+    index.tsx
+    styles.module.css
+    Main/
+    Sidebar/
+      ExpandButton/
 
-static/                  # 静态资源（直接复制到 build 根目录）
-  .nojekyll              # 禁止 GitHub Pages 用 Jekyll 处理
+static/                  # 构建时复制到站点根目录
+  .nojekyll              # 禁止 GitHub Pages 使用 Jekyll
+  CNAME                  # 自定义域名（如 docs.renthub.cloud）
 
 assets/
-  images/                # 图片资源（banner、icon 等）
+  images/                # 图片资源（banner、icon 等；在 staticDirectories 中注册）
 
 docs/                    # 所有文档内容
-  vibe-coding/           # Vibe Coding（AI 辅助开发规范）
-    _category_.json      # 板块元数据（label、position）
-    index.md             # 板块入口索引
+  vibe-coding/
+    _category_.json
+    index.md
     cursor-guide.md
     cursor-concepts.md
-  project-mgmt/          # 项目管理（分支策略、发布流程、Code Review）
+  project-mgmt/
     _category_.json
     index.md
     git-basics.md
     git-workflow.md
-  <future-topic>/        # 新板块按需在此层级新增
+  <future-topic>/        # 新板块按需新增
     _category_.json
     index.md
 ```
@@ -122,7 +134,7 @@ Docusaurus 自动在每篇文档顶部生成面包屑导航，无需手动添加
 
 ### 链接写法
 
-使用**绝对路径**（相对于 `baseUrl`）：
+使用**绝对路径**（相对于 `baseUrl`，本仓库为站点根 `/`）：
 
 ```markdown
 <!-- 正确：绝对路径，不带尾部斜杠 -->
@@ -140,7 +152,7 @@ Docusaurus 自动在每篇文档顶部生成面包屑导航，无需手动添加
 
 | 文档类型 | 必须包含 |
 |----------|---------|
-| 首页（`src/pages/index.tsx`） | 指向各板块的卡片/链接 |
+| 首页（`src/pages/index.tsx`） | 进入文档的主操作（如 Hero CTA）、新手路线链接、各板块入口（卡片或表格） |
 | 板块 `index.md` | 指向子文档的表格（含链接） |
 | 子文档（`.md`） | 无需手动面包屑（Docusaurus 自动生成） |
 
@@ -151,7 +163,7 @@ Docusaurus 自动在每篇文档顶部生成面包屑导航，无需手动添加
   2. `sidebars.ts` 中添加对应条目
   3. `_category_.json` 如果需要调整顺序
 - 新增板块时，同步更新：
-  1. `src/pages/index.tsx` 首页的板块卡片
+  1. `src/pages/index.tsx` 首页中的相关入口（Hero / 路线 / 卡片等）
   2. `sidebars.ts` 新增 category
   3. `docusaurus.config.ts` navbar（如需要）
 - 重命名或移动文件时，**同步**更新所有引用该文件的链接
@@ -163,26 +175,26 @@ Docusaurus 自动在每篇文档顶部生成面包屑导航，无需手动添加
 
 - **主题色**：`#3d7c47`（primary）、`#7cb342`（dark mode primary），定义在 `src/css/custom.css` 的 Infima CSS 变量中
 - **深色模式**：由 Docusaurus 内置支持，`data-theme="light"` / `data-theme="dark"` 属性由框架自动管理；用户选择自动持久化
-- **侧栏折叠**：由 `docusaurus.config.ts` 中 `themeConfig.docs.sidebar.hideable: true` 控制
-- **样式修改**：在 `src/css/custom.css` 中覆盖 Infima CSS 变量；复杂组件使用 CSS Modules（`*.module.css`）
+- **侧栏折叠**：由 `docusaurus.config.ts` 中 `themeConfig.docs.sidebar.hideable: true` 控制；具体交互与布局以 `src/theme/DocRoot/Layout/` 下 swizzle 组件为准
+- **样式修改**：优先在 `src/css/custom.css` 覆盖 Infima 变量；页面级或复杂组件使用 CSS Modules（`*.module.css`）。修改文档页整体布局时，谨慎升级/重新 swizzle，避免与上游主题冲突
 
 ---
 
 ## 可扩展性原则
 
 - 新增板块时，在 `docs/` 下新建对应目录，并同步更新：
-  1. `src/pages/index.tsx` 首页板块卡片
+  1. `src/pages/index.tsx` 首页中的板块入口
   2. `sidebars.ts` 侧边栏
   3. `docusaurus.config.ts` navbar items（如需要）
   4. `README.md` 根目录文档目录表（板块状态一并更新）
 - 不修改现有板块的目录名（避免破坏已有链接）
-- 公共术语、缩写说明统一维护在 `docs/knowledge/glossary.md`
+- 若建立 **`docs/knowledge/`** 等知识库板块，公共术语、缩写说明可统一维护在 `docs/knowledge/glossary.md`，并同步侧栏与首页
 
 ## 本地开发
 
 ```bash
 npm install        # 安装依赖（首次或依赖变更后）
-npm start          # 启动开发服务器，默认 http://localhost:3000/renthub-developer-guide/
+npm start          # 启动开发服务器，默认 http://localhost:3000/（baseUrl 为 /）
 npm run build      # 生产构建，产物在 build/
 npm run serve      # 本地预览构建产物
 ```

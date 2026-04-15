@@ -37,6 +37,149 @@
   font-size: 1.25rem;
 }
 
+/* ── Navbar：毛玻璃 + 胶囊按钮 ── */
+.navbar {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(24, 24, 27, 0.72) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 右侧链接与主题切换之间留白 */
+.navbar__items--right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 右侧所有导航项加胶囊包裹 */
+.navbar__item.navbar__link,
+.navbar__items--right .navbar__item {
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 9999px;
+  padding: 0.3rem 0.9rem !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.navbar__items--right .navbar__item:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+  text-decoration: none;
+}
+
+/* 左侧「文档」链接也胶囊化 */
+.navbar__items--left .navbar__item.navbar__link {
+  border: 1.5px solid var(--ifm-color-emphasis-300);
+  border-radius: 9999px;
+  padding: 0.3rem 0.9rem !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.navbar__items--left .navbar__item.navbar__link:hover,
+.navbar__items--left .navbar__item.navbar__link--active {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+  text-decoration: none;
+}
+
+/* active 状态：实心填充 */
+.navbar__link--active {
+  border-color: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary) !important;
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, transparent) !important;
+}
+
+/* 暗色模式胶囊边框 */
+[data-theme='dark'] .navbar__item.navbar__link,
+[data-theme='dark'] .navbar__items--right .navbar__item {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .navbar__items--right .navbar__item:hover,
+[data-theme='dark'] .navbar__items--left .navbar__item.navbar__link:hover {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+}
+
+/* 深色模式切换：与链接一致的中空胶囊 */
+.navbar__items--right [class*='colorModeToggle'] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 9999px;
+  padding: 0.25rem 0.55rem;
+  background: transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.navbar__items--right [class*='colorModeToggle']:hover,
+.navbar__items--right [class*='colorModeToggle']:focus-within {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+}
+
+.navbar__items--right [class*='colorModeToggle'] button {
+  padding: 0.15rem !important;
+  margin: 0;
+  border: none !important;
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  overflow: visible;
+  min-width: unset;
+}
+
+/* 主题图标尺寸（略大于默认 24px，避免胶囊内被压扁） */
+.navbar__items--right [class*='colorModeToggle'] svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  min-width: 1.5rem;
+  flex-shrink: 0;
+}
+
+[data-theme='dark'] .navbar__items--right [class*='colorModeToggle'] {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .navbar__items--right [class*='colorModeToggle']:hover,
+[data-theme='dark'] .navbar__items--right [class*='colorModeToggle']:focus-within {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+}
+
+/* ── Footer：轻量单行样式 ── */
+.footer {
+  padding: 1rem 0 !important;
+  border-top: 1px solid var(--ifm-color-emphasis-200) !important;
+  background: var(--ifm-background-color) !important;
+}
+
+.footer__bottom {
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-500);
+}
+
+
 /* ── 代码块微调 ── */
 .prism-code {
   font-size: 0.9rem;

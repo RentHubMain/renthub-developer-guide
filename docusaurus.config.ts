@@ -73,26 +73,8 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
-      links: [
-        {
-          title: '文档板块',
-          items: [
-            { label: 'Vibe Coding', to: '/docs/vibe-coding/' },
-            { label: '项目管理', to: '/docs/project-mgmt/' },
-          ],
-        },
-        {
-          title: '更多',
-          items: [
-            { label: 'RentHub 官网', href: 'https://www.renthub.cloud/' },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/RentHubMain/renthub-developer-guide',
-            },
-          ],
-        },
-      ],
+      style: 'light',
+      links: [],
       copyright: `Copyright ©2025-${new Date().getFullYear()} 成都租汇互联网服务有限责任公司 版权所有 | RentHub 开发者指南`,
     },
     prism: {
@@ -108,7 +90,7 @@ const config: Config = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
     },
   } satisfies Preset.ThemeConfig,
 };
