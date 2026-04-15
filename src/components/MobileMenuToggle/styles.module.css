@@ -1,0 +1,40 @@
+/* 桌面端隐藏 */
+.toggle {
+  display: none;
+}
+
+/* 移动端：作为 navbar flex 成员等间距排列 */
+@media (max-width: 996px) {
+  .toggle {
+    order: 100; /* 排在 search (order:99) 之后，位于最右 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--ifm-color-emphasis-300);
+    border-radius: 9999px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    color: var(--ifm-font-color-base);
+    line-height: 0;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  .toggle:hover {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+    background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+  }
+}
+
+[data-theme='dark'] .toggle {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .toggle:hover {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+}

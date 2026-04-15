@@ -217,28 +217,33 @@ table {
 }
 
 /* ══════════════════════════════════════════
-   移动端：禁用侧栏，保持 navbar 链接始终可见
+   移动端适配
    ══════════════════════════════════════════ */
 
-/* 隐藏汉堡按钮和整个侧栏 */
+/* 隐藏 Docusaurus 默认汉堡按钮和侧栏（使用自定义移动菜单代替） */
 .navbar__toggle,
 .navbar-sidebar,
 .navbar-sidebar__backdrop {
   display: none !important;
 }
 
-/* 移动端：隐藏右侧导航链接，只保留暗黑切换和搜索 */
+/* 桌面端默认隐藏移动菜单按钮 */
+.mobile-nav-toggle {
+  display: none;
+}
+
+/* 移动端：隐藏 navbar 中的文档导航链接（在抽屉菜单中展示） */
 @media (max-width: 996px) {
   .navbar__items {
     display: flex !important;
   }
 
-  /* 隐藏右侧所有普通链接（官网、GitHub 等） */
+  /* 隐藏右侧普通链接（官网、GitHub 等在抽屉中展示） */
   .navbar__items--right .navbar__item.navbar__link {
     display: none !important;
   }
 
-  /* 同步隐藏左侧「文档」链接 */
+  /* 隐藏左侧板块导航（在抽屉中展示） */
   .theme-layout-navbar-left .navbar__item.navbar__link {
     display: none !important;
   }
@@ -252,7 +257,41 @@ table {
   }
 
   .navbar__items--right {
-    gap: 0.3rem !important;
+    gap: 0.25rem !important;
+  }
+
+  /* 自定义移动菜单按钮（NavbarItem 注入，跟随 flex 布局等间距） */
+  .mobile-nav-toggle {
+    order: 100;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border: 2px solid var(--ifm-color-emphasis-300);
+    border-radius: 9999px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    color: var(--ifm-font-color-base);
+    line-height: 0;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  .mobile-nav-toggle:hover {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+    background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+  }
+
+  [data-theme='dark'] .mobile-nav-toggle {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  [data-theme='dark'] .mobile-nav-toggle:hover {
+    border-color: var(--ifm-color-primary);
+    background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
   }
 
   .navbar__items--right [class*='colorModeToggle'] button {
@@ -273,7 +312,6 @@ table {
     flex-shrink: 0;
   }
 
-  /* 恢复 Infima 默认量级（约 2rem），勿强制 24px 导致过小 */
   .navbar__logo img {
     height: 2rem !important;
     width: auto !important;
@@ -282,3 +320,4 @@ table {
     display: block;
   }
 }
+

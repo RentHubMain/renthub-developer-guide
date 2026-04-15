@@ -110,6 +110,11 @@ const config: Config = {
           type: 'search',
           position: 'right',
         },
+        {
+          // @ts-ignore — 自定义 NavbarItem → src/theme/NavbarItem/MobileMenuToggleNavbarItem.tsx
+          type: 'custom-MobileMenuToggle',
+          position: 'right',
+        },
       ],
     },
     footer: {
