@@ -1,6 +1,8 @@
-# Cursor 使用指南
+---
+title: Cursor 使用指南
+---
 
-[← 返回 Vibe Coding 板块](./README.md) · [← 返回文档首页](../../README.md)
+[← 返回 Vibe Coding 板块]({{ '/docs/vibe-coding/' | relative_url }}) · [← 返回文档首页]({{ '/' | relative_url }})
 
 ## 1. 账号获取
 

@@ -1,0 +1,27 @@
+<aside class="sidebar">
+  <button class="sidebar-toggle" aria-label="切换侧边栏">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section">
+      <h3>Vibe Coding</h3>
+      <ul>
+        <li><a href="{{ '/docs/vibe-coding/' | relative_url }}" {% if page.url == '/docs/vibe-coding/' or page.url == '/docs/vibe-coding/index.html' %}class="active"{% endif %}>索引</a></li>
+        <li><a href="{{ '/docs/vibe-coding/cursor-guide.html' | relative_url }}" {% if page.url contains 'cursor-guide' %}class="active"{% endif %}>Cursor 使用指南</a></li>
+        <li><a href="{{ '/docs/vibe-coding/cursor-concepts.html' | relative_url }}" {% if page.url contains 'cursor-concepts' %}class="active"{% endif %}>Cursor 核心概念</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <h3>项目管理</h3>
+      <ul>
+        <li><a href="{{ '/docs/project-mgmt/' | relative_url }}" {% if page.url == '/docs/project-mgmt/' or page.url == '/docs/project-mgmt/index.html' %}class="active"{% endif %}>索引</a></li>
+        <li><a href="{{ '/docs/project-mgmt/git-basics.html' | relative_url }}" {% if page.url contains 'git-basics' %}class="active"{% endif %}>Git 基础入门</a></li>
+        <li><a href="{{ '/docs/project-mgmt/git-workflow.html' | relative_url }}" {% if page.url contains 'git-workflow' %}class="active"{% endif %}>Git 协作工作流</a></li>
+      </ul>
+    </div>
+  </nav>
+</aside>

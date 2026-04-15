@@ -1,6 +1,9 @@
-# 项目管理
+---
+title: 项目管理
+permalink: /docs/project-mgmt/
+---
 
-[← 返回文档首页](../../README.md)
+[← 返回文档首页]({{ '/' | relative_url }})
 
 本板块覆盖 RentHub 团队的协作规范，包括分支策略、代码提交、Review 流程与发布管理。
 
@@ -8,8 +11,8 @@
 
 | 文件 | 内容 |
 |------|------|
-| [git-basics.md](./git-basics.md) | Git 基础入门：零基础理解版本控制、分支、提交与远程操作 |
-| [git-workflow.md](./git-workflow.md) | Git 协作工作流：现代 IDE + AI 环境下的分支、提交与 Review 最佳实践 |
+| [Git 基础入门]({{ '/docs/project-mgmt/git-basics.html' | relative_url }}) | 零基础理解版本控制、分支、提交与远程操作 |
+| [Git 协作工作流]({{ '/docs/project-mgmt/git-workflow.html' | relative_url }}) | 现代 IDE + AI 环境下的分支、提交与 Review 最佳实践 |
 
 ## 核心原则
 

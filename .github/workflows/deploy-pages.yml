@@ -1,4 +1,4 @@
-# 将 MkDocs 站点部署到 GitHub Pages（需仓库 Settings → Pages → Build: GitHub Actions）
+# 将 Jekyll 站点部署到 GitHub Pages（需仓库 Settings → Pages → Build: GitHub Actions）
 name: Deploy GitHub Pages
 
 on:
@@ -21,23 +21,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: ruby/setup-ruby@v1
         with:
-          python-version: "3.12"
-          cache: pip
+          ruby-version: "3.3"
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Prepare docs
-        run: python scripts/prepare_mkdocs.py
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - name: Build site
-        run: mkdocs build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
 
   deploy:
     needs: build

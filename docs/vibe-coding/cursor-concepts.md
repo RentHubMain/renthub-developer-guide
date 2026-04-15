@@ -1,6 +1,8 @@
-# Cursor 核心概念指南
+---
+title: Cursor 核心概念指南
+---
 
-[← 返回 Vibe Coding 板块](./README.md) · [← 返回文档首页](../../README.md)
+[← 返回 Vibe Coding 板块]({{ '/docs/vibe-coding/' | relative_url }}) · [← 返回文档首页]({{ '/' | relative_url }})
 
 本文覆盖 Cursor 的五个核心扩展机制：Rules、Skills、Commands、Subagents、MCP。理解它们的边界，能让你花最少的配置精力获得最大的 AI 协作效率。
 
@@ -54,7 +56,7 @@ Skills 支持：
 
 ### 2.3 项目示例：renthub-commit
 
-本仓库已内置 [`renthub-commit`](../../.cursor/skills/renthub-commit/SKILL.md) skill，封装了 RentHub 的 Conventional Commits 规范：
+本仓库已内置 `renthub-commit` skill，封装了 RentHub 的 Conventional Commits 规范：
 
 - 自动读取 `git diff` 分析改动
 - 按规范起草 `type(scope): subject` + body

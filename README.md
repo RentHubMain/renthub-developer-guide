@@ -24,24 +24,6 @@ RentHub 是基于微信小程序的租赁市场平台，连接出租方与承租
 
 后续若有新主题，在 `docs/` 下新增同级目录并将本表同步更新，保持入口一致。
 
-## GitHub Pages
-
-本仓库使用 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) 生成静态站点，并通过 [GitHub Actions 工作流](./.github/workflows/deploy-pages.yml) 部署到 GitHub Pages。
-
-1. 在 GitHub 打开本仓库的 **Settings → Pages**。
-2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**（不要选 “Deploy from a branch”）。
-3. 向 **`main`** 或 **`master`** 分支推送后，工作流会自动构建并发布；部署完成后，同一页面会显示访问地址，一般为 `https://<用户名或组织名>.github.io/<仓库名>/`。
-
-**本地预览**（可选）：安装依赖后运行准备脚本，再启动预览服务。
-
-```bash
-pip install -r requirements.txt
-python scripts/prepare_mkdocs.py
-mkdocs serve
-```
-
-修改根目录 `README.md` 后请重新执行 `python scripts/prepare_mkdocs.py`（会生成 `.gitignore` 已忽略的 `docs/index.md` 与 `docs/assets/`）。推送到 GitHub 后，Actions 会自动完成上述步骤。
-
 ## 零基础新手？从这里开始
 
 如果你刚接触开发，建议按以下顺序阅读：
@@ -61,6 +43,23 @@ mkdocs serve
 - **项目管理板块**：Git 基础、Conventional Commits 规范、AI 时代的协作纪律，适用于任何团队或个人项目
 
 如果你是独立开发者或在其他团队，可以直接借鉴这些经验，按自己的项目情况调整使用。
+
+## GitHub Pages
+
+本仓库使用 [Jekyll](https://jekyllrb.com/) 生成静态站点，并通过 [GitHub Actions 工作流](./.github/workflows/deploy-pages.yml) 部署到 GitHub Pages。
+
+1. 在 GitHub 打开本仓库的 **Settings → Pages**。
+2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**（不要选 “Deploy from a branch”）。
+3. 向 **`main`** 或 **`master`** 分支推送后，工作流会自动构建并发布；部署完成后，同一页面会显示访问地址，一般为 `https://<用户名或组织名>.github.io/<仓库名>/`。
+
+**本地预览**（可选）：
+
+```bash
+bundle install
+bundle exec jekyll serve
+```
+
+浏览器访问 `http://localhost:4000/renthub-developer-guide/` 即可预览。
 
 ---
 

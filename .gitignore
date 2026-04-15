@@ -1,4 +1,7 @@
-/site/
-/docs/index.md
-/docs/assets/
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+Gemfile.lock
 __pycache__/

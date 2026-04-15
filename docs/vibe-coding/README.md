@@ -1,6 +1,9 @@
-# Vibe Coding 指南
+---
+title: Vibe Coding 指南
+permalink: /docs/vibe-coding/
+---
 
-[← 返回文档首页](../../README.md)
+[← 返回文档首页]({{ '/' | relative_url }})
 
 本板块记录 RentHub 团队在 AI 辅助开发中的使用约定，涵盖工具选型、模型选择策略及使用规范，帮助团队高效协作并控制 API 成本。
 
@@ -8,8 +11,8 @@
 
 | 文件 | 内容 |
 |------|------|
-| [cursor-guide.md](./cursor-guide.md) | Cursor 使用指南：账号、模型选择、限额配置与 token 控制 |
-| [cursor-concepts.md](./cursor-concepts.md) | Rules / Skills / Commands / Subagents / MCP 定义与 Best Practice |
+| [Cursor 使用指南]({{ '/docs/vibe-coding/cursor-guide.html' | relative_url }}) | 账号、模型选择、限额配置与 token 控制 |
+| [Cursor 核心概念]({{ '/docs/vibe-coding/cursor-concepts.html' | relative_url }}) | Rules / Skills / Commands / Subagents / MCP 定义与 Best Practice |
 
 ## 核心原则
 
