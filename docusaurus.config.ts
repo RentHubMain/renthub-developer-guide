@@ -61,6 +61,11 @@ const config: Config = {
           label: '文档',
         },
         {
+          href: 'https://www.renthub.cloud/',
+          label: '官网',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/RentHubMain/renthub-developer-guide',
           label: 'GitHub',
           position: 'right',
