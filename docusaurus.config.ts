@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'images/icon.png',
 
   url: 'https://renthubmain.github.io',
-  baseUrl: '/',
+  baseUrl: '/renthub-developer-guide/',
 
   organizationName: 'RentHubMain',
   projectName: 'renthub-developer-guide',
