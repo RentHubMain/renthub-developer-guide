@@ -28,5 +28,5 @@ RentHub 的设计系统基于两个核心原则：
 | 文档 | 适用端 | 说明 |
 |---|---|---|
 | [小程序 UI 设计](/docs/ui-design/mini-program) | 微信小程序 | rpx 单位体系、原生滚动、安全区域、组件规范 |
-| [网页 UI 设计](/docs/ui-design/website) | 官方网站 | 响应式布局、Hero 区、px 单位、断点系统 |
+| [官网 UI 设计](/docs/ui-design/website) | 官方网站 | 响应式布局、Hero 区、px 单位、断点系统 |
 | [Admin Panel UI 设计](/docs/ui-design/admin-panel) | Web 管理后台 | 表格、筛选器、分页、数据展示组件 |
