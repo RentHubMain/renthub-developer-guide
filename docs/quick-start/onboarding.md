@@ -10,13 +10,25 @@ title: 新成员上手指南
 
 开始前，请确认以下账号与权限已就绪：
 
-| 项目 | 说明 |
-|------|------|
-| GitHub 账号 | 已加入 **RentHubMain** 组织，并对业务仓库有写权限 |
-| Cursor Pro | 已激活，登录状态正常；参见 [Cursor 使用指南](/docs/vibe-coding/cursor-guide) |
-| 微信开发者工具 | 已安装并登录微信账号（含小程序开发权限） |
-| Node.js | 推荐 **Node ≥ 18**，通过 `node -v` 验证 |
-| Git | 通过 `git --version` 验证已安装 |
+| 项目         | 说明                                                                  |
+| ---------- | ------------------------------------------------------------------- |
+| GitHub 账号  | 已加入 [**RentHubMain** 组织](https://github.com/RentHubMain)，并对业务仓库有写权限 |
+| Cursor Pro | 已下载并激活，登录状态正常；参见 [Cursor 使用指南](/docs/vibe-coding/cursor-guide)      |
+| 微信开发者工具    | 已安装并登录微信账号（含小程序开发权限）                                                |
+| Node.js    | 推荐 **Node ≥ 18**，通过 `node -v` 验证                                    |
+| Git        | 通过 `git --version` 验证已安装                                            |
+
+链接汇总：
+
+[GitHub 组织](https://github.com/RentHubMain)
+
+[Cursor 下载](https://cursor.com/download)
+
+[微信开发者工具下载](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
+
+[Node.js 下载](https://nodejs.org/en/download)
+
+[Git 下载](https://git-scm.com/)
 
 > 如果尚未获得 GitHub 组织邀请或小程序开发权限，请联系负责人。
 
@@ -91,12 +103,9 @@ git checkout -b feature/your-feature-name
 # 2. 完成代码改动后，运行测试确认无误
 npm test
 
-# 3. 提交代码（commit message 遵循团队规范）
-git add <改动的文件>
-git commit -m "feat: 你的改动描述"
+# 3. 提交代码（使用 /renthub-commit cursor skill）
+cursor: /renthub-commit
 
-# 4. 推送分支
-git push origin feature/your-feature-name
 ```
 
 然后在 GitHub 上创建 Pull Request，等待 CI 检查通过后请求 Code Review。
