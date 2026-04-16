@@ -2,7 +2,7 @@
 title: Git 基础入门
 ---
 
-本文从"Git 是什么"开始，帮你建立完整的心智模型，并掌握日常开发所需的基本操作。
+本文从“Git 是什么”开始，帮你建立完整的心智模型，并掌握日常开发所需的基本操作。
 
 ---
 
@@ -12,7 +12,7 @@ title: Git 基础入门
 
 想象你和队友共同修改同一份代码文件：
 
-- 你发给他一个 `app_v2.js`，他改完发回 `app_v2_final.js`，你又改成 `app_v2_final_真的final.js`
+- 你发给他一个 `app_v2.js`，他改完发回 `app_v2_final.js`，你又改成 `app_v2_final_真的 final.js`
 - 某天出了 bug，想回到三天前的版本——找不到了
 - 两个人同时改了同一行，互相覆盖，其中一人的工作丢失
 
@@ -34,7 +34,7 @@ Git 解决的就是这些问题。
 
 理解这六个概念，Git 就入门了。
 
-### 2.1 Repository（仓库，英文简称repo）
+### 2.1 Repository（仓库，英文简称 repo）
 
 **仓库**就是被 Git 管理的文件夹。你的项目代码、Git 记录的所有历史，都存在这个文件夹里。
 
@@ -43,7 +43,7 @@ Git 解决的就是这些问题。
 
 ### 2.2 Commit（提交）
 
-**Commit 是一个存档点**。每次你觉得"这阶段的工作完成了"，就执行一次 commit，Git 会快照当前所有文件的状态并永久保存。
+**Commit 是一个存档点**。每次你觉得“这阶段的工作完成了”，就执行一次 commit，Git 会快照当前所有文件的状态并永久保存。
 
 每个 commit 包含：
 - 改动的内容
@@ -80,14 +80,14 @@ feature:             D ── E ── F（合并回 main）
 
 ### 2.6 Pull Request（PR）
 
-**PR 是 GitHub 提供的"请求合并"流程**，是团队协作的核心入口。
+**PR 是 GitHub 提供的“请求合并”流程**，是团队协作的核心入口。
 
-> PR只是一个名字，Github叫做PR (Pull Request)，Gitlab上又叫做MR (Merge Request)，但实际上本质是一致的
+> PR 只是一个名字，Github 叫做 PR (Pull Request)，Gitlab 上又叫做 MR (Merge Request)，但实际上本质是一致的
 
 Git 本身只有 merge 命令，PR 是 GitHub 在此之上加的一层协作机制：
 
 1. 你把功能分支 push 到 GitHub
-2. 在 GitHub 上发起 PR，说明"我想把 `feature/xxx` 合并到 `dev`"
+2. 在 GitHub 上发起 PR，说明“我想把 `feature/xxx` 合并到 `dev`”
 3. 队友在 PR 页面查看你的改动、留评论、提问题
 4. 所有问题解决后，点击 **Merge** 完成合并
 
@@ -160,7 +160,7 @@ git status
 
 ### 4.2 暂存改动
 
-**暂存**是 commit 的前一步，你选择"这次提交包含哪些文件的改动"。
+**暂存**是 commit 的前一步，你选择“这次提交包含哪些文件的改动”。
 
 ```bash
 # 暂存某个文件
@@ -170,7 +170,7 @@ git add 文件名.js
 git add .
 ```
 
-> 为什么有"暂存"这一步？因为你可能同时修改了 5 个文件，但只想把其中 3 个作为一次 commit，另外 2 个留到下次。
+> 为什么有“暂存”这一步？因为你可能同时修改了 5 个文件，但只想把其中 3 个作为一次 commit，另外 2 个留到下次。
 
 ### 4.3 提交
 
@@ -271,9 +271,9 @@ git remote -v
 
 ## 7. 处理冲突
 
-冲突不可怕，只是 Git 在说："这两处改动我不知道保留哪个，你来决定。"
+冲突不可怕，只是 Git 在说：“这两处改动我不知道保留哪个，你来决定。”
 
-> **IDE 会帮你处理。** Cursor / VS Code 遇到冲突时会高亮显示，并提供 "Accept Current"（保留你的）、"Accept Incoming"（保留对方的）、"Accept Both" 按钮，点一下就解决，不需要手动删除标记行。
+> **IDE 会帮你处理。** Cursor / VS Code 遇到冲突时会高亮显示，并提供 “Accept Current”（保留你的）、“Accept Incoming”（保留对方的）、“Accept Both” 按钮，点一下就解决，不需要手动删除标记行。
 
 冲突发生时，文件里会出现这样的标记：
 
@@ -293,7 +293,7 @@ git remote -v
 5. `git add 冲突文件` 标记已解决
 6. `git commit` 完成合并
 
-> 现代 IDE（如 Cursor/VS Code）会用可视化界面展示冲突，点击"Accept Current"或"Accept Incoming"即可，不需要手动编辑标记。
+> 现代 IDE（如 Cursor/VS Code）会用可视化界面展示冲突，点击“Accept Current”或“Accept Incoming”即可，不需要手动编辑标记。
 
 ---
 
@@ -317,7 +317,7 @@ git show commit哈希值
 
 ## 9. 撤销与回退
 
-> **IDE 的"撤销"更直观。** Source Control 面板中右键文件可以"Discard Changes"（丢弃改动），历史记录视图也支持直接 revert 某次 commit，不必记忆命令。以下命令供了解原理或终端操作时参考。
+> **IDE 的“撤销”更直观。** Source Control 面板中右键文件可以“Discard Changes”（丢弃改动），历史记录视图也支持直接 revert 某次 commit，不必记忆命令。以下命令供了解原理或终端操作时参考。
 
 ### 9.1 撤销未暂存的改动
 
@@ -343,13 +343,13 @@ git reset --soft HEAD~1
 git reset --hard HEAD~1
 ```
 
-> `HEAD~1` 表示"上一个 commit"，`HEAD~3` 表示"往前三个 commit"。
+> `HEAD~1` 表示“上一个 commit”，`HEAD~3` 表示“往前三个 commit”。
 
 ---
 
 ## 10. 常见问题
 
-**Q：push 被拒绝，提示"rejected, non-fast-forward"**
+**Q：push 被拒绝，提示“rejected, non-fast-forward”**
 
 原因：远程有你本地没有的 commit（队友先 push 了）。先 pull 同步再 push：
 
@@ -370,7 +370,7 @@ git add .
 git commit -m "chore: 初始化项目配置"
 ```
 
-**Q：切换分支前提示"有未提交的改动"**
+**Q：切换分支前提示“有未提交的改动”**
 
 两个选择：
 1. 先 commit 再切换

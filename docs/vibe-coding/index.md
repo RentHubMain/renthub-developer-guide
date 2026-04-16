@@ -13,6 +13,8 @@ title: Vibe Coding 指南
 | [Beyond Cursor：统一AI工具箱](/docs/vibe-coding/beyond-cursor-toolbox) | Rulesync 的定位、仓库结构与日常使用方式 |
 | [Agent Harness：把 AI 变成可控工作流](/docs/vibe-coding/agent-harness) | 把模型、工具、状态和反馈组织成可交付流程 |
 
+---
+
 ## 目标
 
 读完本板块，你应当能够：
@@ -24,9 +26,13 @@ title: Vibe Coding 指南
 - 理解 agent harness 如何把模型、工具、状态和反馈连成可交付流程
 - 在日常开发中高效运用 AI 工具完成需求，减少重复摸索
 
+---
+
 ## 与工程协作的衔接
 
 分支、Conventional Commits、PR / Review 与 `/renthub-commit` 的配合方式见 [Git 协作工作流](/docs/project-mgmt/git-workflow)；Git 命令与工作区概念见 [Git 基础入门](/docs/project-mgmt/git-basics)。第一次参与业务仓开发时，建议按 [新成员上手指南](/docs/quick-start/onboarding) 走通「克隆 → 测试 → 提交 → PR」全链路。
+
+---
 
 ## 核心原则
 

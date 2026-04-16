@@ -11,7 +11,7 @@ title: Beyond Cursor：统一AI工具箱
 - `.cursor/rules/` 里有一条约定：`API 调用统一加 retry 逻辑，最多重试 3 次`
 - 某人换到 Claude Code 工作，这条规则就消失了——因为 Claude Code 的配置在 `CLAUDE.md`，没人手动搬过去
 - 某人用 Copilot 改了同一个模块，生成的代码没有 retry，因为 `.github/copilot-instructions.md` 是另一套独立文件
-- 两个月后，同一个仓库里有三种不同的错误处理风格，没有人知道"官方约定"在哪里
+- 两个月后，同一个仓库里有三种不同的错误处理风格，没有人知道“官方约定”在哪里
 
 这不是不自律，而是**工具原生格式分散，没有单一信源**：
 
@@ -24,9 +24,11 @@ title: Beyond Cursor：统一AI工具箱
 
 每次更新规范，要手动同步四个地方。这才是问题所在。
 
+---
+
 ## 2. Rulesync 是做什么的
 
-Rulesync 把上面四个地方的"源文件"统一到一个地方：
+Rulesync 把上面四个地方的“源文件”统一到一个地方：
 
 ```
 .rulesync/
@@ -42,6 +44,8 @@ rulesync.jsonc  ← 生成配置，定义目标工具和功能开关
 你只维护 `.rulesync/` 下的源文件，Rulesync 负责把它们生成为每个工具自己需要的格式。更新一次，四个客户端同步。
 
 **一句话定位：** Rulesync 不是工具，而是 `.rulesync/` 目录——一套可提交、可 review、可追踪的 AI 规范源文件，通过生成器分发给不同客户端。
+
+---
 
 ## 3. 平时怎么用
 
@@ -102,12 +106,14 @@ rulesync init
 rulesync fetch dyoshikawa/rulesync --features skills
 ```
 
+---
+
 ## 4. 什么时候值得引入 Rulesync？
 
 不是所有团队都需要现在就接入。以下情况说明你已经到了该用它的时候：
 
 - 团队里有超过 1 人，并且不是所有人都用同一个 AI 客户端
 - 某条规则在 Cursor 里验证过，但你发现用 Claude Code 或 Copilot 时模型不知道这条约束
-- 你发现自己在多个工具的配置文件里维护着"差不多但不完全一致"的规则
+- 你发现自己在多个工具的配置文件里维护着“差不多但不完全一致”的规则
 
 如果你还在独自摸索阶段，先在 Cursor 里把规则跑通，再考虑 Rulesync。

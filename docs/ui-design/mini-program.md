@@ -793,7 +793,7 @@ title: 小程序 UI 设计
 .empty-text  { font-size: var(--font-size-base); color: var(--text-placeholder); text-align: center; }
 ```
 
-### 10.3 "没有更多"提示
+### 10.3 “没有更多”提示
 
 列表页底部使用随机文案（由 `app.getRandomNoMoreText()` 全局方法提供），禁止在页面中重新定义：
 

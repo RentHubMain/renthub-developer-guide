@@ -126,7 +126,7 @@ README 中可能还会提到独立目录或仓库下的 **管理后台**（`admi
 
 ## 6. GitHub Actions：`Build` 工作流 {#renthub-github-actions-build}
 
-以下为业务仓库当前 **唯一** CI工作流（文件名以 `.github/workflows/` 下实际为准，常见为 `build.yml`）的逻辑说明；YAML 与团队仓库保持一致即可。
+以下为业务仓库当前 **唯一** CI 工作流（文件名以 `.github/workflows/` 下实际为准，常见为 `build.yml`）的逻辑说明；YAML 与团队仓库保持一致即可。
 
 ### 6.1 触发条件
 
