@@ -11,6 +11,7 @@ import styles from './styles.module.css';
 
 const SIDEBAR_LABELS: Record<string, string> = {
   quickStartSidebar: '快速开始',
+  productThinkingSidebar: '产品思维',
   vibeCodingSidebar: 'Vibe Coding',
   projectMgmtSidebar: '项目管理',
   uiDesignSidebar: '界面设计',

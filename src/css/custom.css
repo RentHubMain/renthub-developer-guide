@@ -1,5 +1,5 @@
 /**
- * RentHub 开发者指南 — 自定义样式
+ * RentHub文档站 — 自定义样式
  * 品牌主色：#3d7c47（primary）/ #7cb342（primary-light / dark mode primary）
  * 基于 Infima CSS 变量覆盖
  */
@@ -208,6 +208,86 @@
 table {
   display: table;
   width: 100%;
+}
+
+/* ── Navbar 下拉菜单：圆角卡片 + 主题色绿色边框 ── */
+
+/* dropdown wrapper：清除默认 padding，保持与其他胶囊等高 */
+.theme-layout-navbar-left .navbar__item.dropdown {
+  padding: 0;
+  position: relative;
+}
+
+/* ::after 向下延伸 hover 区，高度与菜单 margin-top 完全对齐，确保桥接不断 */
+.theme-layout-navbar-left .navbar__item.dropdown::after {
+  content: '';
+  position: absolute;
+  bottom: -0.6rem;
+  left: 0;
+  right: 0;
+  height: 0.6rem;
+}
+
+.navbar__item.dropdown .navbar__link {
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 9999px;
+  padding: 0.3rem 0.9rem !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.navbar__item.dropdown:hover .navbar__link,
+.navbar__item.dropdown .navbar__link--active {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 6%, transparent);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .navbar__item.dropdown .navbar__link {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .navbar__item.dropdown:hover .navbar__link {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+}
+
+/* 下拉菜单面板：圆角卡片 + 主题色外框 */
+.dropdown__menu {
+  border: 2px solid var(--ifm-color-primary) !important;
+  border-radius: 12px !important;
+  padding: 0.4rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+  min-width: 10rem;
+  margin-top: 0.6rem !important;
+}
+
+[data-theme='dark'] .dropdown__menu {
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 菜单项：圆角 hover 效果 */
+.dropdown__link {
+  border-radius: 8px !important;
+  padding: 0.45rem 0.9rem !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown__link:hover,
+.dropdown__link--active {
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, transparent) !important;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none;
+}
+
+[data-theme='dark'] .dropdown__link:hover,
+[data-theme='dark'] .dropdown__link--active {
+  background: color-mix(in srgb, var(--ifm-color-primary) 16%, transparent) !important;
 }
 
 /* ── 侧边栏分类标题加粗 ── */

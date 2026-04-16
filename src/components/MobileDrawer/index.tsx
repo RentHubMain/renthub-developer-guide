@@ -28,11 +28,12 @@ const NAV_SECTIONS = [
 
 const EXTERNAL_LINKS = [
   { label: '官网',   href: 'https://www.renthub.cloud/',                                Icon: Globe },
-  { label: 'GitHub', href: 'https://github.com/RentHubMain/renthub-developer-guide',   Icon: GitFork },
+  { label: 'GitHub', href: 'https://github.com/RentHubMain/renthub-docs',   Icon: GitFork },
 ];
 
 const SIDEBAR_LABELS: Record<string, string> = {
   quickStartSidebar:   '快速开始',
+  productThinkingSidebar: '产品思维',
   vibeCodingSidebar:   'Vibe Coding',
   projectMgmtSidebar:  '项目管理',
   uiDesignSidebar:     '界面设计',
