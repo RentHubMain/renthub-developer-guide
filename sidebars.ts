@@ -59,6 +59,20 @@ const sidebars: SidebarsConfig = {
       ],
     },
   ],
+  productThinkingSidebar: [
+    {
+      type: 'category',
+      label: '产品思维',
+      link: { type: 'doc', id: 'product-thinking/index' },
+      items: [
+        'product-thinking/product-owner-mindset',
+        'product-thinking/user-first',
+        'product-thinking/product-frameworks',
+        'product-thinking/product-design-practice',
+        'product-thinking/renthub-practice',
+      ],
+    },
+  ],
 };
 
 export default sidebars;
