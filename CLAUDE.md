@@ -33,6 +33,8 @@ npm install       # 安装依赖
 npm start         # 开发服务器（http://localhost:3000/）
 npm run build     # 生产构建（产物到 build/）
 npm run serve     # 预览构建产物
+npm run format:md # 统一格式化 docs / legal 下 Markdown（标题编号、引号、空行等）
+npm run format:md:check # 检查是否需要格式化（CI 用，有改动则非零退出）
 ```
 
 ## 内容规范

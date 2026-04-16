@@ -224,6 +224,8 @@ npm install        # 安装依赖（首次或依赖变更后）
 npm start          # 启动开发服务器，默认 http://localhost:3000/（baseUrl 为 /）
 npm run build      # 生产构建，产物在 build/
 npm run serve      # 本地预览构建产物
+npm run format:md  # 统一格式化 docs / legal / legal_versioned_docs 下 Markdown
+npm run format:md:check  # 检查格式（未格式化则非零退出，供 CI 使用）
 ```
 
 **注意**：`package.json` 中通过 `overrides` 将 `webpack` 固定在 `5.95.0`，原因是 `webpackbar@6` 与 webpack 5.96+ 存在 ProgressPlugin API 不兼容问题（Node 24 环境下复现）。升级 webpack 前须确认 `webpackbar` 已修复该问题。
