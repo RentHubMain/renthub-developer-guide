@@ -124,7 +124,7 @@ README 中可能还会提到独立目录或仓库下的 **管理后台**（`admi
 
 ---
 
-## 6. GitHub Actions：`Build` 工作流
+## 6. GitHub Actions：`Build` 工作流 {#renthub-github-actions-build}
 
 以下为业务仓库当前 **唯一** CI工作流（文件名以 `.github/workflows/` 下实际为准，常见为 `build.yml`）的逻辑说明；YAML 与团队仓库保持一致即可。
 
@@ -236,3 +236,11 @@ jobs:
 | GitHub | 已配置 **`SONAR_TOKEN`**；Sonar 项目与 `sonar-project.properties` 一致 |
 
 本地若与 CI 结果不一致，优先核对 Node 版本、`npm ci` 是否可干净通过、以及 lockfile 是否已提交。
+
+---
+
+## 10. 延伸阅读
+
+- [GitHub Actions 工作流](/docs/project-mgmt/github-actions)：以文档站工作流为例，理解 CI/CD 与 GitHub Pages 部署（与本页业务仓 `Build` 对照阅读）
+- [新成员上手指南](/docs/quick-start/onboarding)：环境、测试与第一次 PR 的推荐路径
+- [产品思维](/docs/product-thinking/)：需求优先级与用户价值，与 §8「从需求到上线」链路互补

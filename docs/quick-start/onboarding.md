@@ -116,6 +116,8 @@ cursor: /renthub-commit
 
 ## 7. CI 会做什么
 
+**CI/CD 通用概念**与**本文档站**（`renthub-docs`）的 GitHub Pages 部署示例，见 [GitHub Actions 工作流](/docs/project-mgmt/github-actions)。下面概括的是**业务 Monorepo** 上 PR 触发的 `Build` 工作流。
+
 PR 提交后，GitHub Actions `Build` 工作流会自动执行：
 
 1. **依赖审查**（仅 PR）：检查新增依赖的安全漏洞
@@ -123,7 +125,7 @@ PR 提交后，GitHub Actions `Build` 工作流会自动执行：
 3. **npm test**：单元测试 + 覆盖率
 4. **SonarQube 分析**：代码质量检查
 
-所有步骤通过后方可合并。详见 [RentHub 业务仓库开发工作流 §6](/docs/project-mgmt/renthub-dev-workflow#6-github-actions-build-工作流)。
+所有步骤通过后方可合并。详见 [RentHub 业务仓库开发工作流 §6](/docs/project-mgmt/renthub-dev-workflow#renthub-github-actions-build)。
 
 ---
 
@@ -132,9 +134,14 @@ PR 提交后，GitHub Actions `Build` 工作流会自动执行：
 | 问题类型 | 参考文档 |
 |---------|---------|
 | AI 工具使用 / token 消耗 | [Cursor 使用指南](/docs/vibe-coding/cursor-guide) |
+| Rules / Skills / MCP 等机制 | [Cursor 核心概念](/docs/vibe-coding/cursor-concepts) |
 | Git 操作不熟悉 | [Git 基础入门](/docs/project-mgmt/git-basics) |
 | 分支与协作规范 | [Git 协作工作流](/docs/project-mgmt/git-workflow) |
+| CI/CD 与文档站部署 | [GitHub Actions 工作流](/docs/project-mgmt/github-actions) |
 | 云函数开发 | [腾讯云 CloudBase 入门](/docs/dev-knowledge/cloudbase) |
 | 小程序开发 | [微信小程序开发体系](/docs/dev-knowledge/wechat-mini-program) |
-| UI 规范 | [界面设计](/docs/ui-design/mini-program) |
+| 现代 JS 语法速查 | [JavaScript ES6+ 语法](/docs/dev-knowledge/js-es6) |
+| UI 规范 | [小程序 UI 设计](/docs/ui-design/mini-program)；三端总览见 [界面设计](/docs/ui-design/) |
+| 需求与用户价值对齐 | [产品思维](/docs/product-thinking/) |
 | 完整发布流程 | [RentHub 业务仓库开发工作流](/docs/project-mgmt/renthub-dev-workflow) |
+| 本板块索引 | [快速开始](/docs/quick-start) |

@@ -109,7 +109,7 @@ const config: Config = {
             {
               type: 'docSidebar',
               sidebarId: 'projectMgmtSidebar',
-              label: '项目管理',
+              label: '版本管理与工作流',
             },
             {
               type: 'docSidebar',

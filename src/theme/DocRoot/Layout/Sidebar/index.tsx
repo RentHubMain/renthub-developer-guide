@@ -13,7 +13,7 @@ const SIDEBAR_LABELS: Record<string, string> = {
   quickStartSidebar: '快速开始',
   productThinkingSidebar: '产品文档',
   vibeCodingSidebar: 'Vibe Coding',
-  projectMgmtSidebar: '项目管理',
+  projectMgmtSidebar: '版本管理与工作流',
   uiDesignSidebar: '界面设计',
   devKnowledgeSidebar: '开发知识',
 };

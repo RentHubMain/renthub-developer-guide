@@ -2,7 +2,7 @@
 title: 界面设计
 ---
 
-RentHub 采用统一的设计系统，贯穿小程序、Web 管理后台与官网三个端。本板块提供各端的 UI 设计准则、组件规范与代码示例，帮助开发者在编写界面时保持视觉一致性。
+RentHub 采用统一的设计系统，贯穿小程序、Web 管理后台与官网三个端。本板块提供各端的 UI 设计准则、组件规范与代码示例，帮助开发者在编写界面时保持视觉一致性。三端对应的运行时与仓库布局（`miniprogram/`、`admin/`、`website/` 等）见 [开发知识](/docs/dev-knowledge/) 与 [RentHub 业务仓库开发工作流](/docs/project-mgmt/renthub-dev-workflow)。
 
 ## 目录
 

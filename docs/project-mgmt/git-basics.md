@@ -386,7 +386,7 @@ git stash pop      # 还原改动
 
 ## 11. 与团队工作流衔接
 
-掌握本文内容后，阅读 [Git 协作工作流](/docs/project-mgmt/git-workflow) 了解 RentHub 团队具体的分支策略、Commit 规范与 PR 流程。
+掌握本文内容后，阅读 [Git 协作工作流](/docs/project-mgmt/git-workflow) 了解 RentHub 团队具体的分支策略、Commit 规范与 PR 流程。首次参与业务仓开发时，可按 [新成员上手指南](/docs/quick-start/onboarding) 的顺序完成环境与第一次 PR。
 
 **快速回顾：日常开发最常用的命令**
 

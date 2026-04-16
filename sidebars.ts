@@ -25,7 +25,7 @@ const sidebars: SidebarsConfig = {
   projectMgmtSidebar: [
     {
       type: 'category',
-      label: '项目管理',
+      label: '版本管理与工作流',
       link: { type: 'doc', id: 'project-mgmt/index' },
       items: [
         'project-mgmt/git-basics',

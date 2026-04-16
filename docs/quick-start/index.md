@@ -2,7 +2,7 @@
 title: 快速开始
 ---
 
-本板块帮助新成员在最短时间内完成环境搭建、了解协作规范，并顺利提交第一个 Pull Request。
+本板块帮助新成员在最短时间内完成环境搭建、了解协作规范，并顺利提交第一个 Pull Request。与全站其他内容衔接阅读时，可对照 [Vibe Coding](/docs/vibe-coding/)（AI 协作与 Cursor）、[版本管理与工作流](/docs/project-mgmt/)（Git、PR、CI 与业务仓发布）、[开发知识](/docs/dev-knowledge/)（微信、CloudBase、ES6+）及 [界面设计](/docs/ui-design/)（三端视觉规范）。
 
 ## 目录
 

@@ -9,48 +9,54 @@ import styles from './index.module.css';
 const steps = [
   {
     num: '01',
+    title: '新成员快速上手指南',
+    desc: '环境、克隆业务仓、跑通测试到第一次 PR 的推荐顺序与检查清单',
+    to: '/docs/quick-start/onboarding',
+  },
+  {
+    num: '02',
     title: 'Cursor 使用指南',
     desc: '如何用 AI 辅助开发：模型怎么选、额度怎么省',
     to: '/docs/vibe-coding/cursor-guide',
   },
   {
-    num: '02',
+    num: '03',
     title: 'Cursor 核心概念',
     desc: 'Rules、Skills、MCP 等机制，让 AI 按团队规范工作',
     to: '/docs/vibe-coding/cursor-concepts',
   },
   {
-    num: '03',
+    num: '04',
     title: 'Git 基础入门',
     desc: '理解版本控制、工作区与分支，是参与任何项目的前提',
     to: '/docs/project-mgmt/git-basics',
   },
   {
-    num: '04',
+    num: '05',
     title: 'Git 协作工作流',
     desc: '分支策略、Conventional Commits、PR / Review、GitHub Projects 关联',
     to: '/docs/project-mgmt/git-workflow',
   },
   {
-    num: '05',
+    num: '06',
     title: 'GitHub Actions 工作流',
     desc: '读懂 CI/CD 概念与文档站部署示例，再看业务仓流水线更容易',
     to: '/docs/project-mgmt/github-actions',
   },
   {
-    num: '06',
+    num: '07',
     title: 'RentHub 业务仓库开发工作流',
     desc: 'Monorepo 目录、Jest / 覆盖率、Sonar、`Build` 流水线与发布链路',
     to: '/docs/project-mgmt/renthub-dev-workflow',
   },
   {
-    num: '07',
+    num: '08',
     title: '微信小程序开发体系',
     desc: '开发者工具、导入项目、上传体验版 / 提审与类目注意点',
     to: '/docs/dev-knowledge/wechat-mini-program',
   },
   {
-    num: '08',
+    num: '09',
     title: '腾讯云 CloudBase 入门',
     desc: '数据库、云函数分层与调用方式，对应小程序 `wx.cloud`',
     to: '/docs/dev-knowledge/cloudbase',
@@ -77,7 +83,7 @@ const categories = [
     to: '/docs/vibe-coding/',
   },
   {
-    tag: '项目管理',
+    tag: '版本管理与工作流',
     title: '工程协作规范',
     desc: 'Git 基础、Conventional Commits、AI 时代的协作纪律。个人项目同样适用。',
     to: '/docs/project-mgmt/',
@@ -143,7 +149,7 @@ const QuickStart: FC = () => (
         <span className={styles.sectionLabel}>新手路线</span>
         <h2 className={styles.sectionTitle}>从这里开始</h2>
         <p className={styles.sectionSub}>
-          建议按序阅读：先用 Cursor 建立 AI 协作习惯，再读 Git 基础与团队工作流；随后是 CI、RentHub 业务仓流程，以及微信与 CloudBase。完整目录见侧栏与各板块首页。
+          建议按序阅读：先跟快速上手指南走通环境与第一次 PR；再用 Cursor 建立 AI 协作习惯，接着读 Git 基础与团队工作流；随后是 CI、RentHub 业务仓流程，以及微信与 CloudBase。完整目录见侧栏与各板块首页。
         </p>
       </div>
       <ol className={styles.timeline}>
@@ -167,7 +173,7 @@ const QuickStart: FC = () => (
         <Link to="/docs/ui-design/">界面设计</Link>
         {' '}；需要巩固现代 JS 时可读{' '}
         <Link to="/docs/dev-knowledge/js-es6">JavaScript ES6+</Link>
-        {' '}；项目管理其余文档见{' '}
+        {' '}；版本管理与工作流其余文档见{' '}
         <Link to="/docs/project-mgmt/">板块索引</Link>
         {' '}，开发知识见{' '}
         <Link to="/docs/dev-knowledge/">开发知识</Link>。

@@ -1,5 +1,5 @@
 ---
-title: 项目管理
+title: 版本管理与工作流
 ---
 
 本板块覆盖 RentHub 团队的协作规范，包括分支策略、代码提交、Review 流程与发布管理。
@@ -21,6 +21,12 @@ title: 项目管理
 - 理解并遵循 RentHub 的 PR 提交与 Code Review 流程
 - 读懂并配置 GitHub Actions CI/CD 工作流
 - 独立完成业务仓库从功能开发到生产发布的完整链路
+
+## 与其他板块的衔接
+
+- [新成员上手指南](/docs/quick-start/onboarding)：从零配置环境到第一次 PR 的实操顺序
+- [Vibe Coding](/docs/vibe-coding/)：Cursor 使用方式、Rules / Skills 与 AI 协作纪律（与 [Git 协作工作流](/docs/project-mgmt/git-workflow) 中的提交规范配套）
+- [开发知识](/docs/dev-knowledge/)：微信、CloudBase、ES6+，对应业务仓技术栈背景
 
 ## 核心原则
 

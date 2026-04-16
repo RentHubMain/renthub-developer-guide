@@ -23,7 +23,7 @@ const NAV_SECTIONS = [
   { label: '快速开始',  to: '/docs/quick-start/',    Icon: Zap },
   { label: '产品文档',  to: '/docs/product-thinking/', Icon: Lightbulb },
   { label: 'Vibe Coding', to: '/docs/vibe-coding/', Icon: Terminal },
-  { label: '项目管理',  to: '/docs/project-mgmt/',   Icon: GitBranch },
+  { label: '版本管理与工作流',  to: '/docs/project-mgmt/',   Icon: GitBranch },
   { label: '界面设计',  to: '/docs/ui-design/',       Icon: Layout },
   { label: '开发知识',  to: '/docs/dev-knowledge/',   Icon: BookOpen },
 ];
@@ -37,7 +37,7 @@ const SIDEBAR_LABELS: Record<string, string> = {
   quickStartSidebar:   '快速开始',
   productThinkingSidebar: '产品文档',
   vibeCodingSidebar:   'Vibe Coding',
-  projectMgmtSidebar:  '项目管理',
+  projectMgmtSidebar:  '版本管理与工作流',
   uiDesignSidebar:     '界面设计',
   devKnowledgeSidebar: '开发知识',
 };

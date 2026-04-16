@@ -398,4 +398,4 @@ deploy:
 
 ## 9. 延伸阅读
 
-RentHub **业务 Monorepo**（小程序、云函数、Jest 与 Sonar 等）的 CI 与端到端发布链路见 [RentHub 业务仓库开发工作流](/docs/project-mgmt/renthub-dev-workflow)。
+RentHub **业务 Monorepo**（小程序、云函数、Jest 与 Sonar 等）的 CI 与端到端发布链路见 [RentHub 业务仓库开发工作流](/docs/project-mgmt/renthub-dev-workflow)。分支、提交信息与 PR 习惯法见 [Git 协作工作流](/docs/project-mgmt/git-workflow)；从零跑通第一次 PR 见 [新成员上手指南](/docs/quick-start/onboarding)。

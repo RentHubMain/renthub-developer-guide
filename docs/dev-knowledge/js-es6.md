@@ -1750,3 +1750,9 @@ function getDisplayInfo(order) {
   };
 }
 ```
+
+---
+
+## 22. 延伸阅读
+
+小程序与云函数代码大量依赖本章语法。结合 RentHub 工程上下文时，可继续阅读 [微信小程序开发体系](/docs/dev-knowledge/wechat-mini-program)、[腾讯云 CloudBase 入门](/docs/dev-knowledge/cloudbase) 与 [RentHub 业务仓库开发工作流](/docs/project-mgmt/renthub-dev-workflow)。

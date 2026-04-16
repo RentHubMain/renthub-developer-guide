@@ -19,6 +19,10 @@ title: Vibe Coding 指南
 - 理解并运用 Rules、Skills、Commands、MCP 等 AI 辅助开发核心概念
 - 在日常开发中高效运用 AI 工具完成需求，减少重复摸索
 
+## 与工程协作的衔接
+
+分支、Conventional Commits、PR / Review 与 `/renthub-commit` 的配合方式见 [Git 协作工作流](/docs/project-mgmt/git-workflow)；Git 命令与工作区概念见 [Git 基础入门](/docs/project-mgmt/git-basics)。第一次参与业务仓开发时，建议按 [新成员上手指南](/docs/quick-start/onboarding) 走通「克隆 → 测试 → 提交 → PR」全链路。
+
 ## 核心原则
 
 - 优先用套餐内额度，仅在真正需要时才切换到高算力模型

@@ -24,7 +24,7 @@ title: 微信小程序开发体系
 | 端能力 | 微信 API | 登录、支付、文件、位置等（需配置与权限） |
 | 数据与业务后端 | 云开发 / CloudBase、`wx.cloud` | 数据库、云函数、存储等（见本站 [腾讯云 CloudBase 入门](/docs/dev-knowledge/cloudbase)） |
 
-界面视觉规范另见 [小程序 UI 设计](/docs/ui-design/mini-program)。
+界面视觉规范另见 [小程序 UI 设计](/docs/ui-design/mini-program)。Monorepo 中 `miniprogram/` 与云函数的协作、测试与发布见 [RentHub 业务仓库开发工作流](/docs/project-mgmt/renthub-dev-workflow)。
 
 ### 1.3 官方文档地图（建议收藏）
 

@@ -107,3 +107,11 @@ Anthropic 模型支持开启 **Extended Thinking**，模型在输出前先完成
 | 用一个超长对话完成所有任务 | 按任务拆分，必要时 New Chat |
 | 让模型"随便重构一下" | 明确告知范围、目标与约束 |
 | Unlimited = 无限制消耗 | Unlimited 指不限单次 fast request 数量，总额度仍有限 |
+
+---
+
+## 7. 延伸阅读
+
+- [Cursor 核心概念](/docs/vibe-coding/cursor-concepts)：Rules、Skills、Commands、Subagents、MCP 的边界与 `/renthub-commit` 示例
+- [Git 协作工作流](/docs/project-mgmt/git-workflow)：AI 时代下的分支、提交信息与 PR / Review 约定
+- [新成员上手指南](/docs/quick-start/onboarding)：本地环境、测试与第一次 PR 的推荐顺序
