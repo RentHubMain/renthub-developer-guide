@@ -11,3 +11,7 @@ _site/
 # Misc
 __pycache__/
 .DS_Store
+
+# Local tooling / personal editor data（不入库）
+.claude/
+.obsidian/
