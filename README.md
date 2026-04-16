@@ -141,6 +141,10 @@ npx docusaurus docs:version:legal 0.0.2
 # 之后更新 legal/ 文件元数据 + docusaurus.config.ts 版本标签与 navbar
 ```
 
+## 许可证
+
+除另有声明外，本仓库中的文档与站点内容采用 [**Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International**](https://creativecommons.org/licenses/by-nc-nd/4.0/)（**CC BY-NC-ND 4.0**，署名—非商业性使用—禁止演绎）许可：使用须保留署名；不得用于商业目的；不得基于本作品制作并分享演绎作品。完整许可条款以仓库根目录 [**LICENSE**](./LICENSE) 文件为准。
+
 ---
 
 仓库级编写规范见：[`.cursor/rules/project-guide.mdc`](./.cursor/rules/project-guide.mdc)
