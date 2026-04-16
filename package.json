@@ -1,7 +1,8 @@
 {
-  "name": "renthub-developer-guide",
+  "name": "renthub-docs",
   "version": "0.0.1",
   "private": true,
+  "description": "RentHub文档站（租汇官方文档与知识库，Docusaurus）：轻资产物品与工业设备租赁（C2C 优先）等主题。",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

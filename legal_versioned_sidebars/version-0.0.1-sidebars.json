@@ -1,0 +1,16 @@
+{
+  "legalSidebar": [
+    {
+      "type": "category",
+      "label": "法律文档",
+      "link": {
+        "type": "doc",
+        "id": "index"
+      },
+      "items": [
+        "lessor-rental-agreement",
+        "lessee-rental-agreement"
+      ]
+    }
+  ]
+}

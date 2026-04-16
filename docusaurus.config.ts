@@ -3,15 +3,16 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'RentHub 开发者指南',
-  tagline: 'RentHub 团队开发者参考手册',
+  title: 'RentHub文档站',
+  tagline:
+    '成都租汇互联网服务有限责任公司 · 轻资产物品与工业设备租赁 — 官方文档与知识库',
   favicon: 'images/icon.png',
 
   url: 'https://docs.renthub.cloud',
   baseUrl: '/',
 
   organizationName: 'RentHubMain',
-  projectName: 'renthub-developer-guide',
+  projectName: 'renthub-docs',
 
   onBrokenLinks: 'throw',
   markdown: {
@@ -28,6 +29,26 @@ const config: Config = {
   // Serve existing assets/images/ as static files
   staticDirectories: ['static', 'assets'],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'legal',
+        path: 'legal',
+        routeBasePath: 'legal',
+        sidebarPath: './sidebars-legal.ts',
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: '0.0.2',
+          },
+        },
+        editUrl:
+          'https://github.com/RentHubMain/renthub-docs/edit/main/',
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -35,7 +56,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/RentHubMain/renthub-developer-guide/edit/main/',
+            'https://github.com/RentHubMain/renthub-docs/edit/main/',
         },
         blog: false,
         theme: {
@@ -60,7 +81,7 @@ const config: Config = {
   themeConfig: {
     image: 'images/renthub-banner.png',
     navbar: {
-      title: 'RentHub 开发者指南',
+      title: 'RentHub文档站',
       logo: {
         alt: 'RentHub Logo',
         src: 'images/icon.png',
@@ -74,27 +95,54 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'vibeCodingSidebar',
+          sidebarId: 'productThinkingSidebar',
           position: 'left',
-          label: 'Vibe Coding',
+          label: '产品文档',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'projectMgmtSidebar',
+          type: 'dropdown',
+          label: '开发文档',
           position: 'left',
-          label: '项目管理',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'vibeCodingSidebar',
+              label: 'Vibe Coding',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'projectMgmtSidebar',
+              label: '项目管理',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'uiDesignSidebar',
+              label: '界面设计',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'devKnowledgeSidebar',
+              label: '开发知识',
+            },
+          ],
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'uiDesignSidebar',
+          type: 'dropdown',
+          label: '法律文档',
           position: 'left',
-          label: '界面设计',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'devKnowledgeSidebar',
-          position: 'left',
-          label: '开发知识',
+          items: [
+            // 勿用 docSidebar：在版本化路径下仍会解析为「当前正在看的版本」的首页，导致无法切回现行版
+            {
+              to: '/legal/',
+              label: '协议文档（v0.0.2）',
+              activeBaseRegex:
+                '^/legal(?!/(?:\\d+\\.\\d+\\.\\d+|next)(?:/|$))',
+            },
+            {
+              href: '/legal/0.0.1/',
+              label: '协议文档（v0.0.1）',
+            },
+          ],
         },
         {
           href: 'https://www.renthub.cloud/',
@@ -102,7 +150,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/RentHubMain/renthub-developer-guide',
+          href: 'https://github.com/RentHubMain/renthub-docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -120,7 +168,7 @@ const config: Config = {
     footer: {
       style: 'light',
       links: [],
-      copyright: `Copyright ©2025-${new Date().getFullYear()} 成都租汇互联网服务有限责任公司 版权所有 | RentHub 开发者指南`,
+      copyright: `Copyright ©2025-${new Date().getFullYear()} 成都租汇互联网服务有限责任公司 版权所有 | 轻资产物品与工业设备租赁（C2C 优先）| RentHub文档站`,
     },
     prism: {
       theme: prismThemes.github,

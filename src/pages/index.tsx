@@ -59,6 +59,18 @@ const steps = [
 
 const categories = [
   {
+    tag: '法律文档',
+    title: '法律与协议',
+    desc: '平台公示的商家租赁协议等文本，便于商户、租户与团队统一查阅版本与生效信息。',
+    to: '/legal/',
+  },
+  {
+    tag: '产品思维',
+    title: '产品与用户价值',
+    desc: '像产品主人一样思考：用户第一、方法论与租汇场景下的实践总结。',
+    to: '/docs/product-thinking/',
+  },
+  {
     tag: 'Vibe Coding',
     title: 'AI 辅助开发',
     desc: 'Cursor 模型选择、token 控制、Rules / Skills / MCP 的使用方式。不管你在哪个团队，这套方法都能直接用。',
@@ -90,11 +102,11 @@ const HomepageHero: FC = () => {
     <div className={styles.hero}>
       <div className={styles.heroInner}>
         <div className={styles.heroLeft}>
-          <span className={styles.heroBadge}>Developer Guide</span>
+          <span className={styles.heroBadge}>文档站</span>
           <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
           <p className={styles.heroLead}>
-            RentHub 是基于微信小程序的租赁市场平台，采用 Monorepo 架构，
-            涵盖小程序、云函数、管理后台与官网。
+            租汇（RentHub）是轻资产服务平台，为商户（出租方，lessor）与租户（承租方，lessee）提供信息发布、撮合、支付结算、物流协调与争议调解等能力；聚焦物品与工业设备的
+            B2B/C2C 租赁（当前以 C2C 为主），依托微信小程序与 Monorepo（小程序、云函数、管理后台、官网）。
           </p>
           <p className={styles.heroMeta}>
             官网：<a
@@ -107,7 +119,7 @@ const HomepageHero: FC = () => {
             </a>
             <span className={styles.heroDot} />
             源码：<a
-              href="https://github.com/RentHubMain/renthub-developer-guide"
+              href="https://github.com/RentHubMain/renthub-docs"
               target="_blank"
               rel="noreferrer"
               className={styles.heroLink}
@@ -181,8 +193,8 @@ const BeyondRentHub: FC = () => (
           <span className={styles.sectionLabel}>通用价值</span>
           <h2 className={styles.sectionTitle}>不只适用于 RentHub</h2>
           <p className={styles.beyondDesc}>
-            本文档站以 RentHub 为背景，但其中的大量内容对<strong>任何开发者</strong>都有参考价值。
-            如果你是独立开发者或在其他团队，可以直接借鉴这些经验，按自己的项目情况调整使用。
+            本站以 RentHub 业务为背景编写，其中大量内容对<strong>不同角色的读者</strong>都有参考价值。
+            若你在其他团队或独立工作，可以直接借鉴这些经验，按自己的项目情况调整使用。
           </p>
         </div>
         <div className={styles.beyondCards}>

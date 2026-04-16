@@ -1,21 +1,25 @@
-# RentHub 开发者指南
+# RentHub文档站
 
 ![RentHub Banner](./assets/images/renthub-banner.png)
 
-本仓库 **`renthub-developer-guide`** 是 **RentHub（租汇）** 面向团队的 **文档站源码**：使用 [Docusaurus 3](https://docusaurus.io/) 将 `docs/` 下的 Markdown 构建为静态站点。**不包含小程序、云函数、管理后台等业务代码**；正文与专题在 `docs/` 中持续补充。
+本仓库 **`renthub-docs`** 是 **RentHub（租汇）官方综合文档站**的源码：使用 [Docusaurus 3](https://docusaurus.io/) 将 `docs/`、`legal/` 等目录下的 Markdown 构建为静态站点。内容覆盖快速开始、产品、开发协作、界面设计、法律知识库等主题；**不包含**小程序、云函数、管理后台等业务实现代码。
 
 **线上站点**：[docs.renthub.cloud](https://docs.renthub.cloud)（由本仓库构建部署，自定义域名见 `static/CNAME`）。
 
+## 公司简介
+
+**租汇（RentHub）** 由 **成都租汇互联网服务有限责任公司** 运营，是 **轻资产服务平台**：为 **商户（出租方，lessor）** 与 **租户（承租方，lessee）** 提供 **信息发布、交易撮合、支付结算、物流协调、争议调解** 等中介服务。业务聚焦 **B2B / C2C 物品与工业设备租赁**，当前阶段以 **C2C** 为切入。（C2C 场景下商户含个人卖家，口径仍称商户。）
+
 ## RentHub 产品与文档的关系
 
-RentHub 是基于微信小程序的租赁市场平台（信息发布、浏览、预订、订单等），并配有 Web 管理后台。产品线在工程上通常采用 **Monorepo**，常见目录约定包括：
+RentHub 客户端以 **微信小程序** 为主触点，配套 **Web 管理后台** 与 **官网**，覆盖浏览上架物品、下单、合约与支付、履约协同等链路。产品线在工程上通常采用 **Monorepo**，常见目录约定包括：
 
 - 小程序前端（WXML + WXSS + JS）
 - 云函数（user / asset / order 等域）
 - React + TypeScript 管理后台
 - 官方网站
 
-上述 **业务代码所在仓库与本文档仓库相互独立**；本仓库只维护开发者可见的说明、规范与上手路径。
+上述 **业务代码所在仓库与本文档仓库相互独立**；本仓库维护 **RentHub 文档站** 的源码与正文（综合知识库，可持续扩展新专题）。
 
 官网：[renthub.cloud](https://www.renthub.cloud/)
 
@@ -44,6 +48,8 @@ RentHub 是基于微信小程序的租赁市场平台（信息发布、浏览、
 | [项目管理](./docs/project-mgmt/index.md) | 分支、Code Review、文档站与业务仓 CI 工作流等 | 进行中 |
 | [界面设计](./docs/ui-design/index.md) | 拟物化设计系统、三端 UI 规范 | 进行中 |
 | [开发知识](./docs/dev-knowledge/index.md) | 微信小程序开发体系、CloudBase、JavaScript ES6+等 | 进行中 |
+| [产品思维](./docs/product-thinking/index.md) | 产品主人意识、用户第一、方法论与租汇实践 | 进行中 |
+| [法律文档](./legal/index.md) | 平台公示的协议与法律类文本（商家 / 租户租赁协议等） | 进行中 |
 | 项目综述 | 架构、技术选型、模块关系 | 待撰写 |
 | 开发注意事项 | 环境、调试、常见问题 | 待撰写 |
 
@@ -66,12 +72,12 @@ RentHub 是基于微信小程序的租赁市场平台（信息发布、浏览、
 
 ## 不只适用于 RentHub
 
-本文档站虽以 RentHub 项目为背景，但其中大量内容对**任何开发者**都有参考价值：
+本站虽以 RentHub 业务为背景编写，其中许多篇章对**读者与协作者**（含开发、产品、设计等角色）都有参考价值：
 
 - **Vibe Coding 板块**：Cursor 模型选择策略、token 控制、Rules/Skills/MCP 的使用方式，适用于所有使用 Cursor 进行 AI 辅助开发的场景
 - **项目管理板块**：Git 基础、Conventional Commits 规范、AI 时代的协作纪律，适用于任何团队或个人项目
 
-如果你是独立开发者或在其他团队，可以直接借鉴这些经验，按自己的项目情况调整使用。
+若你在其他团队或独立工作，可直接借鉴这些内容，并按自身场景裁剪使用。
 
 ## 本地开发
 
@@ -90,7 +96,50 @@ npm run serve        # 本地预览构建产物
 
 1. 在 GitHub 打开本仓库的 **Settings → Pages**。
 2. 在 **Build and deployment** 中，将 **Source** 设为 **GitHub Actions**（不要选 “Deploy from a branch”）。
-3. 若使用 GitHub 默认域名，访问形式一般为 `https://<用户或组织>.github.io/<仓库名>/`。本仓库同时通过 `static/CNAME` 配置 **自定义域名** `docs.renthub.cloud`；DNS 与证书需在域名/GitHub 侧按官方文档配置。
+3. 若使用 GitHub 默认域名，访问形式一般为 `https://<用户或组织>.github.io/renthub-docs/`（以仓库实际名称为准）。本仓库同时通过 `static/CNAME` 配置 **自定义域名** `docs.renthub.cloud`；DNS 与证书需在域名/GitHub 侧按官方文档配置。
+
+## 法律文档版本管理
+
+法律文档（`legal/`）采用 Docusaurus 独立插件版本化管理。**现行版本始终存放在 `legal/` 目录**，旧版本归档至 `legal_versioned_docs/`。
+
+### 目录结构
+
+| 路径 | 说明 |
+|------|------|
+| `legal/` | 现行版本文档（版本号由 `docusaurus.config.ts` 中 `current.label` 标注） |
+| `legal_versioned_docs/version-X.X.X/` | 已归档的旧版本快照（只读，不直接修改） |
+| `legal_versioned_sidebars/version-X.X.X-sidebars.json` | 对应旧版本的侧边栏配置 |
+| `legal_versions.json` | 已归档版本列表（不含当前版本） |
+| `sidebars-legal.ts` | 现行版本侧边栏配置 |
+
+### 修改现行版本
+
+直接编辑 `legal/` 下的文件。修改完成后同步更新每份协议文件的 front matter 与顶部 tip 块：
+
+```yaml
+version: "X.X.X"
+effectiveDate: "YYYY-MM-DD"
+lastUpdated: "YYYY-MM-DD"
+```
+
+### 发布新版本
+
+使用内置 Cursor Skill 自动完成整个发布流程：
+
+```
+/legal-version-release
+```
+
+Skill 会依次引导你归档旧版本、更新元数据、更新站点配置，并完成构建验证。完整 SOP 见 [`.cursor/skills/legal-version-release/SKILL.md`](./.cursor/skills/legal-version-release/SKILL.md)。
+
+如需手动操作，核心命令为：
+
+```bash
+# 将当前 legal/ 快照为旧版本（如 0.0.2）
+npx docusaurus docs:version:legal 0.0.2
+
+# 之后更新 legal/ 文件元数据 + docusaurus.config.ts 版本标签与 navbar
+```
 
 ---
 
