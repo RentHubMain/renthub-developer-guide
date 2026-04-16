@@ -14,7 +14,7 @@ const githubDefaultBranch = 'main';
  *
  * 环境变量：DOC_EDIT_PROTOCOL — 例如 `cursor`（默认 `vscode`）
  */
-function createEditUrl(repoContentSubdir: 'docs' | 'legal') {
+function createEditUrl(repoContentSubdir: 'docs' | 'legal' | 'api_docs') {
   return ({
     docPath,
     versionDocsDirPath,
@@ -74,6 +74,16 @@ const config: Config = {
           },
         },
         editUrl: createEditUrl('legal'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'api_docs',
+        routeBasePath: 'api',
+        sidebarPath: './sidebars-api.ts',
+        editUrl: createEditUrl('api_docs'),
       },
     ],
   ],
@@ -150,6 +160,57 @@ const config: Config = {
               type: 'docSidebar',
               sidebarId: 'devKnowledgeSidebar',
               label: '开发知识',
+            },
+          ],
+        },
+        {
+          // API 文档：二级菜单按分组拆分侧栏，进入「规范」只显示规范两篇文档
+          // 每项用 docSidebar 指向独立侧栏，active 状态由侧栏匹配判定，避免全部高亮
+          type: 'dropdown',
+          label: 'API 文档',
+          position: 'left',
+          items: [
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiOverviewSidebar',
+              label: '概览',
+            },
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiSpecSidebar',
+              label: '规范',
+            },
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiCoreSidebar',
+              label: '核心业务',
+            },
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiCreditSidebar',
+              label: '信用与评价',
+            },
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiDisputeSidebar',
+              label: '保障与争议',
+            },
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiMessageSidebar',
+              label: '消息与帮助',
+            },
+            {
+              type: 'docSidebar',
+              docsPluginId: 'api',
+              sidebarId: 'apiSystemSidebar',
+              label: '系统与管理',
             },
           ],
         },

@@ -18,7 +18,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '..');
 
-const roots = ['docs', 'legal', 'legal_versioned_docs'];
+const roots = ['docs', 'legal', 'legal_versioned_docs', 'api_docs'];
 
 const LDQM = '\u201c'; // "
 const RDQM = '\u201d'; // "

@@ -16,6 +16,13 @@ const SIDEBAR_LABELS: Record<string, string> = {
   projectMgmtSidebar: '版本管理与工作流',
   uiDesignSidebar: '界面设计',
   devKnowledgeSidebar: '开发知识',
+  apiOverviewSidebar: '概览',
+  apiSpecSidebar: '规范',
+  apiCoreSidebar: '核心业务',
+  apiCreditSidebar: '信用与评价',
+  apiDisputeSidebar: '保障与争议',
+  apiMessageSidebar: '消息与帮助',
+  apiSystemSidebar: '系统与管理',
 };
 
 function ResetOnSidebarChange({children}: {children: ReactNode}) {
