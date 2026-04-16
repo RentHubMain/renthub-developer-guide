@@ -19,6 +19,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'vibe-coding/cursor-guide',
         'vibe-coding/cursor-concepts',
+        'vibe-coding/beyond-cursor-toolbox',
+        'vibe-coding/agent-harness',
       ],
     },
   ],

@@ -11,7 +11,16 @@ _site/
 # Misc
 __pycache__/
 .DS_Store
+Thumbs.db
 
-# Local tooling / personal editor data（不入库）
+# Logs
+*.log
+npm-debug.log*
+
+# AI tools — ignore runtime/cache, keep config files
 .claude/
 .obsidian/
+skills-lock.json
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
